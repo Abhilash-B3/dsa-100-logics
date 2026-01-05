@@ -1,7 +1,13 @@
-import { useState } from 'react';
-import { BookOpen, Code2, Search, ChevronRight } from 'lucide-react';
+// ...existing code...
+import React, { useState } from "react";
+import { BookOpen, Code2, ChevronRight } from "lucide-react";
 
-const dsaProblems = [
+type Problem = { name: string; url: string };
+type ProblemCategory = { category: string; problems: Problem[] };
+type Note = { name: string; url: string };
+type NoteCategory = { category: string; notes: Note[] };
+
+const dsaProblems: ProblemCategory[] = [
   {
     category: "Arrays & Lists",
     problems: [
@@ -154,136 +160,250 @@ const dsaProblems = [
   }
 ];
 
-function App() {
-  const [searchTerm, setSearchTerm] = useState('');
+const notesData: NoteCategory[] = [
+  {
+    category: "Java",
+    notes: [
+      { name: "Java Notes", url: "https://drive.google.com/file/d/1cU3ou9sEiKjKd4EGbS7ySlnyakUv1vkE/view?usp=drive_link" },
+      { name: "Java Handwritten Notes", url: "https://drive.google.com/file/d/1sgPGRwbD1KVtLGepmszRVvLnjG_LHQoa/view?usp=drive_link" },
+      { name: "Java Interview Questions", url: "https://drive.google.com/file/d/1d54zFQfSkFlqHNQkFtqB1Ei_Qo44tWpT/view?usp=drive_link" },
+      { name: "Java Collection Framework", url: "https://drive.google.com/file/d/1KQ987PfNuvBflQ7m0wf_T1YCkSQRyTqg/view?usp=drive_link" },
+      { name: "Core Java ", url: "https://drive.google.com/file/d/1mEn6anErtC2bANH_hhxCK4Ai3sEcXUcQ/view?usp=drive_link" },
+      { name: "Java Handwritten Notes", url: "https://drive.google.com/file/d/1swMFaV1QnYE2J6J3LhCRhx7BNRMcfuVY/view?usp=drive_link" }
+    ]
+  },
+  {
+    category: "Python",
+    notes: [
+      { name: "Python Notes", url: "https://drive.google.com/file/d/1anu_hPYy57c3T4lQyd4N3_-K8U0I3vDT/view?usp=drive_link" },
+      { name: "Python Notes", url: "https://drive.google.com/file/d/1u4IDS_EzR-567GT9-GuF-4t1fgRpEAd8/view?usp=drive_link" },
+      { name: "Python With Examples", url: "https://drive.google.com/file/d/1XacrH62iTOSbxLiYEo8DbmHGforoA2yo/view?usp=drive_link" },
+      { name: "Python HandWritten Notes", url: "https://drive.google.com/file/d/1o3i1qusTa9NoyG4IkIksCrSruwnpNzsV/view?usp=drive_link" },
+      { name: "Python 101 Programs", url: "https://drive.google.com/file/d/1f57IlKe4UYI3DAdRPRwm7RmQG1zL5cqz/view?usp=drive_link" }
+    ]
+  },
+  {
+    category: "Full Stack Development",
+    notes: [
+      { name: "JavaScript Notes", url: "https://drive.google.com/file/d/1XHWkgGjmvnoBQEMmCMlU9D5R4hKRncE1/view?usp=drive_link" },
+      { name: "JavaScript HandWritten Notes", url: "https://drive.google.com/file/d/1Bwb6b4B0Km4sXZiicVI9aqDz84ObXNLj/view?usp=drive_link" },
+      { name: "React.js Notes", url: "https://drive.google.com/file/d/1gjS-xVjuRlla_NdEnK1JECyyOV1ePrjw/view?usp=drive_link" },
+      { name: "BackEnd Interview QA", url: "https://drive.google.com/file/d/1lcQU_sWyND6iOjuIOkOw4KKZVctJeWOE/view?usp=drive_link" },
+      { name: "React.js HandWritten Notes", url: "https://drive.google.com/file/d/1r4XyVLKXBiOTQ6mNByCnAS0qjTgIw-KQ/view?usp=drive_link" },
+      { name: "BackEnd HandWritten Notes", url: "https://drive.google.com/file/d/10GVGKWUpAQeTLpJieeezXOaYDcGbjWgm/view?usp=drive_link" },
+      { name: "MERN Stack HandWritten Notes", url: "https://drive.google.com/file/d/1Zsk_K2p13kmxPGUHd0c7fFOiLDD_Izik/view?usp=drive_link" },
+      { name: "Java Full Stack Interview QA", url: "https://drive.google.com/file/d/1u3bgtoq_f6CICw-HMBgwOofP-eeFinH1/view?usp=drive_link" }
+    ]
+  },
+  {
+    category: "SQL",
+    notes: [
+      { name: "SQL Notes", url: "https://drive.google.com/file/d/1GjV1OitZOwcNgMmFgtq13niBqrDU7lfc/view?usp=drive_link" },
+      { name: "SQL HandWritten Notes", url: "https://drive.google.com/file/d/1F_DL9UF7HUzb-UHovstyBUDA4DUR398C/view?usp=drive_link" }
+    ]
+  },
+  {
+    category: "Technical Interviews",
+    notes: [
+      { name: "Technical Interviews Prep", url: "https://drive.google.com/file/d/1eTcMvlRVePtozv0KIxWGynxa_hNwPUiv/view?usp=drive_link" },
+      { name: "Technical Interviews Prep1", url: "https://drive.google.com/file/d/1CKR6LrnVOqwKE5gODhQ9aExjbLcLSVHe/view?usp=drive_link" },
+      { name: "Java Full Stack Interview QA", url: "https://drive.google.com/file/d/1u3bgtoq_f6CICw-HMBgwOofP-eeFinH1/view?usp=drive_link" },
+      { name: "150 Java QA", url: "https://drive.google.com/file/d/1Jav70TURVhMQEpryf-1mjgp0j55EObp9/view?usp=drive_link" },
+      { name: "Java QA", url: "https://drive.google.com/file/d/1ArJPWx1H60ZY5vowBm-MyYD92nt6Re1f/view?usp=drive_link" },
+      { name: "FrontEnd INterview QA", url: "https://drive.google.com/file/d/1uBfnXdnNZSSf9FGKh-A6smLvHoEr_M2L/view?usp=drive_link" },
+      { name: "Python Programs", url: "https://drive.google.com/file/d/1f9zlJGFGcLYDR0fYxv7yP_R-YFU5iPp2/view?usp=drive_link" },
+      { name: "Python Technical QA", url: "https://drive.google.com/file/d/1YmLj-OLs8mGoVIHORjOZBpEBK0-ghyiZ/view?usp=drive_link" },
+      { name: "Python Interview QA", url: "https://drive.google.com/file/d/1QG0swkOfE4xi4-9PdJR8h_3FKnDrTKZx/view?usp=drive_link" },
+      { name: "Python Codes Cheatsheet", url: "https://drive.google.com/file/d/13cLOpZws4BqY5xUriQRI41ZtkwKSIfdq/view?usp=drive_link" }
+    ]
+  },
+  {
+    category: "DSA",
+    notes: [
+      { name: "DSA Notes", url: "https://drive.google.com/file/d/1vFJd4TF0fB30bsyj6VZ-za4JsfthKJvF/view?usp=drive_link" },
+      { name: "LeetCode Problems with Solutions", url: "https://drive.google.com/file/d/13PJ-ueL-T8ct9HxnNZbqLD6rmYSvFCWO/view?usp=drive_link" },
+      { name: "Strivers DSA Part-1", url: "https://drive.google.com/file/d/13l5Z1OfA71qyK0jE3rUHVflb2wSDSfdL/view?usp=drive_link" },
+      { name: "Strivers DSA Part-2", url: "https://drive.google.com/file/d/1eocDDHSEG7ApyYnXQv0xnYdmxpfsXuks/view?usp=drive_link" },
+      { name: "DSA Algorithms", url: "https://drive.google.com/file/d/1dTECRox-WV0cY3UeNVPnJgXHdagBD3hG/view?usp=drive_link" },
+      { name: "DSA LeetCode Topic-Wise", url: "https://drive.google.com/file/d/1iL7jgEjEV-dkN1aHcIO75K1mtgUic3la/view?usp=drive_link" },
+      { name: "Strivers SDE Sheet", url: "https://drive.google.com/file/d/1e7nl_jI6ItkA2RelMFqKPRIjdKcJS82_/view?usp=drive_link" }
+    ]
+  }
+];
+
+export default function App(): JSX.Element {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedNotesCategory, setSelectedNotesCategory] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"home" | "dsa">("home");
 
-  const filteredProblems = dsaProblems.map(category => ({
-    ...category,
-    problems: category.problems.filter(problem =>
-      problem.name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  })).filter(category =>
-    category.problems.length > 0 &&
-    (!selectedCategory || category.category === selectedCategory)
-  );
-
-  const totalProblems = dsaProblems.reduce((sum, cat) => sum + cat.problems.length, 0);
+  const totalProblems = dsaProblems.reduce((sum, c) => sum + c.problems.length, 0);
+  const selectedNotes = notesData.find((n) => n.category === selectedNotesCategory)?.notes || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djZoLTZ2LTZ6TTAgMHY2aDZWMHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
       <div className="relative">
-        <header className="bg-slate-900/50 backdrop-blur-sm border-b border-slate-700/50 sticky top-0 z-10">
+        <header className="bg-slate-900 border-b border-slate-700 sticky top-0 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg shadow-emerald-500/20">
                 <Code2 className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-white tracking-tight">Top 100 DSA Problems</h1>
-                <p className="text-slate-400 text-sm mt-1">Master data structures and algorithms with curated practice</p>
+                <h1 className="text-3xl font-bold text-white tracking-tight">CodePath</h1>
+                <p className="text-slate-400 text-sm mt-1">Improve skills, practice problems and prepare for interviews</p>
               </div>
             </div>
 
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search problems..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
-              />
+            <div className="flex gap-2 mb-4">
+              <button
+                onClick={() => { setViewMode("home"); setSelectedNotesCategory(null); setSelectedCategory(null); }}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${viewMode === "home" ? "bg-emerald-600 text-white" : "bg-slate-800/50 text-slate-300"}`}
+              >
+                Home
+              </button>
+              <button
+                onClick={() => { setViewMode("dsa"); setSelectedCategory(null); setSelectedNotesCategory(null); }}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${viewMode === "dsa" ? "bg-emerald-600 text-white" : "bg-slate-800/50 text-slate-300"}`}
+              >
+                DSA Practice
+              </button>
             </div>
 
-            <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
-              <button
-                onClick={() => setSelectedCategory(null)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
-                  !selectedCategory
-                    ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'
-                    : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50'
-                }`}
-              >
-                All ({totalProblems})
-              </button>
-              {dsaProblems.map(cat => (
+            {viewMode === "dsa" && (
+              <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
                 <button
-                  key={cat.category}
-                  onClick={() => setSelectedCategory(cat.category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
-                    selectedCategory === cat.category
-                      ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'
-                      : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50'
-                  }`}
+                  onClick={() => setSelectedCategory(null)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium ${!selectedCategory ? "bg-emerald-600 text-white" : "bg-slate-800/50 text-slate-300"}`}
                 >
-                  {cat.category} ({cat.problems.length})
+                  All ({totalProblems})
                 </button>
-              ))}
-            </div>
+                {dsaProblems.map((cat) => (
+                  <button
+                    key={cat.category}
+                    onClick={() => setSelectedCategory(cat.category)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium ${selectedCategory === cat.category ? "bg-emerald-600 text-white" : "bg-slate-800/50 text-slate-300"}`}
+                  >
+                    {cat.category} ({cat.problems.length})
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </header>
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filteredProblems.map((category, idx) => (
-              <div
-                key={category.category}
-                className="bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300"
-                style={{ animationDelay: `${idx * 50}ms` }}
-              >
-                <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-b border-slate-700/50 p-4">
-                  <div className="flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-emerald-400" />
-                    <h2 className="text-lg font-semibold text-white">{category.category}</h2>
+          {viewMode === "dsa" ? (
+            <section>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-semibold text-white">DSA Practice</h2>
+                <p className="text-sm text-slate-400">All practice problems grouped by category</p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {dsaProblems.map((category, index) => (
+                  <div key={category.category} className="bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden transition-all duration-300">
+                    <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-b border-slate-700/50 p-4">
+                      <div className="flex items-center gap-2">
+                        <BookOpen className="w-5 h-5 text-emerald-400" />
+                        <h3 className="text-lg font-semibold text-white">{category.category}</h3>
+                      </div>
+                      <p className="text-slate-400 text-sm mt-1">{category.problems.length} problems</p>
+                    </div>
+
+                    <div className="p-4">
+                      <ul className="space-y-2">
+                        {category.problems.map((problem) => (
+                          <li key={problem.url}>
+                            <a
+                              href={problem.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex items-center justify-between p-3 rounded-lg bg-slate-900/40 hover:bg-slate-700/40 border border-slate-700/30 transition-all"
+                            >
+                              <span className="text-slate-200 text-sm font-medium group-hover:text-emerald-400">{problem.name}</span>
+                              <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400" />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <p className="text-slate-400 text-sm mt-1">{category.problems.length} problems</p>
-                </div>
+                ))}
+              </div>
+            </section>
+          ) : (
+            <section>
+              {selectedNotesCategory ? (
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-semibold text-white">{selectedNotesCategory} Notes</h2>
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => setSelectedNotesCategory(null)} className="px-3 py-1 rounded bg-slate-800/50 text-slate-200">Back</button>
+                    </div>
+                  </div>
 
-                <div className="p-4">
-                  <ul className="space-y-2">
-                    {category.problems.map((problem, problemIdx) => (
-                      <li key={problemIdx}>
-                        <a
-                          href={problem.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-center justify-between p-3 rounded-lg bg-slate-900/40 hover:bg-slate-700/40 border border-slate-700/30 hover:border-emerald-500/50 transition-all duration-200"
-                        >
-                          <span className="text-slate-200 text-sm font-medium group-hover:text-emerald-400 transition-colors">
-                            {problem.name}
-                          </span>
-                          <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
-                        </a>
-                      </li>
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {selectedNotes.map((note) => (
+                      <div key={note.url} className="bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden transition-all duration-300">
+                        <div className="p-4">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <h3 className="text-sm font-medium text-slate-200">{note.name}</h3>
+                              <p className="text-xs text-slate-400 mt-1">{selectedNotesCategory}</p>
+                            </div>
+                            <a href={note.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-600 text-white text-sm">View</a>
+                          </div>
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ) : (
+                <div>
+                  <div className="mb-8">
+                    <div className="bg-slate-800 rounded-2xl p-8 mb-6 text-center ">
+                      <h1 className="text-2xl font-semibold text-white mb-3" >Your one-stop hub for Learning Programming, interview prep, and DSA practice.</h1>
+                      <h3 className="text-2xl font-semibold text-white mb-3">From fundamentals to job-ready - your journey starts here.</h3>
+                      <h3 className="text-2xl font-semibold text-white mb-3">Build skills with clarity. Crack interviews with confidence.</h3>
+                      <h3 className="text-2xl font-semibold text-white mb-3">Code better. Think smarter. Perform stronger.</h3>
+                    </div>
 
-          {filteredProblems.length === 0 && (
-            <div className="text-center py-16">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800/50 mb-4">
-                <Search className="w-8 h-8 text-slate-500" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-300 mb-2">No problems found</h3>
-              <p className="text-slate-500">Try adjusting your search or filter</p>
-            </div>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {notesData.map((n) => (
+                        <div key={n.category} className="bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden transition-all duration-300">
+                          <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-b border-slate-700/50 p-4">
+                            <div className="flex items-center gap-2">
+                              <BookOpen className="w-5 h-5 text-emerald-400" />
+                              <h3 className="text-lg font-semibold text-white">{n.category}</h3>
+                            </div>
+                            <p className="text-slate-400 text-sm mt-1">{n.notes.length} notes</p>
+                          </div>
+
+                          <div className="p-4">
+                            <div className="flex items-center justify-between p-3 rounded-lg bg-slate-900/40 border border-slate-700/30">
+                              <span className="text-slate-200 text-sm font-medium">Overview</span>
+                              <button onClick={() => setSelectedNotesCategory(n.category)} className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-600 text-white text-sm">Open</button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </section>
           )}
         </main>
 
-        <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 border-t border-slate-700/50">
-          <p className="text-center text-slate-400 text-sm">
-            Practice consistently and track your progress. Happy coding!
-          </p>
+        <footer className="bg-slate-900 border-t border-slate-700 mt-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <p className="text-center text-slate-400 text-sm">Practice consistently and track your progress. Happy coding!</p>
+          </div>
         </footer>
       </div>
     </div>
   );
 }
-
-export default App;
+// ...existing code...
