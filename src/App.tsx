@@ -170,7 +170,7 @@ const notesData: NoteCategory[] = [
       { name: "Java Collection Framework", url: "https://drive.google.com/file/d/1KQ987PfNuvBflQ7m0wf_T1YCkSQRyTqg/view?usp=drive_link" },
       { name: "Core Java ", url: "https://drive.google.com/file/d/1mEn6anErtC2bANH_hhxCK4Ai3sEcXUcQ/view?usp=drive_link" },
       { name: "Java Handwritten Notes", url: "https://drive.google.com/file/d/1swMFaV1QnYE2J6J3LhCRhx7BNRMcfuVY/view?usp=drive_link" },
-       { name: "HCL Java Questions ", url: "https://drive.google.com/file/d/1W9dPMagcoEhH0T7Ffmyi6ehEC1SHjH2T/view?usp=drive_link" }
+      { name: "HCL Java Questions ", url: "https://drive.google.com/file/d/1W9dPMagcoEhH0T7Ffmyi6ehEC1SHjH2T/view?usp=drive_link" }
     ]
   },
   {
