@@ -230,7 +230,7 @@ const notesData: NoteCategory[] = [
       { name: "DSA Algorithms", url: "https://drive.google.com/file/d/1dTECRox-WV0cY3UeNVPnJgXHdagBD3hG/view?usp=drive_link" },
       { name: "DSA LeetCode Topic-Wise", url: "https://drive.google.com/file/d/1iL7jgEjEV-dkN1aHcIO75K1mtgUic3la/view?usp=drive_link" },
       { name: "Strivers SDE Sheet", url: "https://drive.google.com/file/d/1e7nl_jI6ItkA2RelMFqKPRIjdKcJS82_/view?usp=drive_link" },
-      { name: "DSA RoadMap Topic-wise" url: "https://drive.google.com/file/d/1QGhE8OfmcQS4Ab6fwKpobTnA4qQrnxgl/view?usp=drive_link" }
+      { name: "DSA RoadMap Topic-wise", url: "https://drive.google.com/file/d/1QGhE8OfmcQS4Ab6fwKpobTnA4qQrnxgl/view?usp=drive_link" }
     ]
   }
 ];
