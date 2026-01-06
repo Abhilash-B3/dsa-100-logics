@@ -169,7 +169,8 @@ const notesData: NoteCategory[] = [
       { name: "Java Interview Questions", url: "https://drive.google.com/file/d/1d54zFQfSkFlqHNQkFtqB1Ei_Qo44tWpT/view?usp=drive_link" },
       { name: "Java Collection Framework", url: "https://drive.google.com/file/d/1KQ987PfNuvBflQ7m0wf_T1YCkSQRyTqg/view?usp=drive_link" },
       { name: "Core Java ", url: "https://drive.google.com/file/d/1mEn6anErtC2bANH_hhxCK4Ai3sEcXUcQ/view?usp=drive_link" },
-      { name: "Java Handwritten Notes", url: "https://drive.google.com/file/d/1swMFaV1QnYE2J6J3LhCRhx7BNRMcfuVY/view?usp=drive_link" }
+      { name: "Java Handwritten Notes", url: "https://drive.google.com/file/d/1swMFaV1QnYE2J6J3LhCRhx7BNRMcfuVY/view?usp=drive_link" },
+       { name: "HCL Java Questions ", url: "https://drive.google.com/file/d/1W9dPMagcoEhH0T7Ffmyi6ehEC1SHjH2T/view?usp=drive_link" }
     ]
   },
   {
@@ -199,7 +200,9 @@ const notesData: NoteCategory[] = [
     category: "SQL",
     notes: [
       { name: "SQL Notes", url: "https://drive.google.com/file/d/1GjV1OitZOwcNgMmFgtq13niBqrDU7lfc/view?usp=drive_link" },
-      { name: "SQL HandWritten Notes", url: "https://drive.google.com/file/d/1F_DL9UF7HUzb-UHovstyBUDA4DUR398C/view?usp=drive_link" }
+      { name: "SQL HandWritten Notes", url: "https://drive.google.com/file/d/1F_DL9UF7HUzb-UHovstyBUDA4DUR398C/view?usp=drive_link" },
+      { name: "SQL Interview Questions", url: "https://drive.google.com/file/d/1qRi6_35alnPBbE6rqWM9-kCzSvg1mXJZ/view?usp=drive_link" },
+      { name: "SQL CheatSheet 1 Page", url: "https://drive.google.com/file/d/1kjiXIRyAvL5VfHyleo0LuucZAQmRTpOl/view?usp=drive_link" }
     ]
   },
   {
@@ -226,7 +229,8 @@ const notesData: NoteCategory[] = [
       { name: "Strivers DSA Part-2", url: "https://drive.google.com/file/d/1eocDDHSEG7ApyYnXQv0xnYdmxpfsXuks/view?usp=drive_link" },
       { name: "DSA Algorithms", url: "https://drive.google.com/file/d/1dTECRox-WV0cY3UeNVPnJgXHdagBD3hG/view?usp=drive_link" },
       { name: "DSA LeetCode Topic-Wise", url: "https://drive.google.com/file/d/1iL7jgEjEV-dkN1aHcIO75K1mtgUic3la/view?usp=drive_link" },
-      { name: "Strivers SDE Sheet", url: "https://drive.google.com/file/d/1e7nl_jI6ItkA2RelMFqKPRIjdKcJS82_/view?usp=drive_link" }
+      { name: "Strivers SDE Sheet", url: "https://drive.google.com/file/d/1e7nl_jI6ItkA2RelMFqKPRIjdKcJS82_/view?usp=drive_link" },
+      { name: "DSA RoadMap Topic-wise" url: "https://drive.google.com/file/d/1QGhE8OfmcQS4Ab6fwKpobTnA4qQrnxgl/view?usp=drive_link" }
     ]
   }
 ];
