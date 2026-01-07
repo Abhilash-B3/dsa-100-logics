@@ -309,7 +309,7 @@ export default function App(): JSX.Element {
               </div>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {dsaProblems.map((category, index) => (
+                {filteredProblems.map((category, index) => (
                   <div key={category.category} className="bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden transition-all duration-300">
                     <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-b border-slate-700/50 p-4">
                       <div className="flex items-center gap-2">
