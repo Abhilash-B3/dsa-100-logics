@@ -193,7 +193,10 @@ const notesData: NoteCategory[] = [
       { name: "React.js HandWritten Notes", url: "https://drive.google.com/file/d/1r4XyVLKXBiOTQ6mNByCnAS0qjTgIw-KQ/view?usp=drive_link" },
       { name: "BackEnd HandWritten Notes", url: "https://drive.google.com/file/d/10GVGKWUpAQeTLpJieeezXOaYDcGbjWgm/view?usp=drive_link" },
       { name: "MERN Stack HandWritten Notes", url: "https://drive.google.com/file/d/1Zsk_K2p13kmxPGUHd0c7fFOiLDD_Izik/view?usp=drive_link" },
-      { name: "Java Full Stack Interview QA", url: "https://drive.google.com/file/d/1u3bgtoq_f6CICw-HMBgwOofP-eeFinH1/view?usp=drive_link" }
+      { name: "Java Full Stack Interview QA", url: "https://drive.google.com/file/d/1u3bgtoq_f6CICw-HMBgwOofP-eeFinH1/view?usp=drive_link" },
+      { name: "Java with Spring and SpringBoot", url: "https://drive.google.com/file/d/14RePIxL-EMfDK3pcc9p70pgecQyyrINS/view?usp=drive_link" },
+      { name: "Spring Boot Notes", url: "https://drive.google.com/file/d/1qtmV--WQYbo17hv9jGx86sajl56Hp4zQ/view?usp=drive_link" },
+      { name: "Spring & SpringBoot Annotations", url: "https://drive.google.com/file/d/1gvuwa_gX_sl7lvCX6ROFTviVKxM-aayC/view?usp=drive_link" }
     ]
   },
   {
