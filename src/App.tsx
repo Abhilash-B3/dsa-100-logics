@@ -244,6 +244,7 @@ export default function App(): JSX.Element {
 
   const totalProblems = dsaProblems.reduce((sum, c) => sum + c.problems.length, 0);
   const selectedNotes = notesData.find((n) => n.category === selectedNotesCategory)?.notes || [];
+  const filteredProblems = selectedCategory ? dsaProblems.filter(cat => cat.category === selectedCategory) : dsaProblems;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
