@@ -169,7 +169,8 @@ const notesData: NoteCategory[] = [
       { name: "Java Collection Framework", url: "https://drive.google.com/file/d/1KQ987PfNuvBflQ7m0wf_T1YCkSQRyTqg/view?usp=drive_link" },
       { name: "Core Java ", url: "https://drive.google.com/file/d/1mEn6anErtC2bANH_hhxCK4Ai3sEcXUcQ/view?usp=drive_link" },
       { name: "Java Handwritten Notes", url: "https://drive.google.com/file/d/1swMFaV1QnYE2J6J3LhCRhx7BNRMcfuVY/view?usp=drive_link" },
-      { name: "HCL Java Questions ", url: "https://drive.google.com/file/d/1W9dPMagcoEhH0T7Ffmyi6ehEC1SHjH2T/view?usp=drive_link" }
+      { name: "HCL Java Questions ", url: "https://drive.google.com/file/d/1W9dPMagcoEhH0T7Ffmyi6ehEC1SHjH2T/view?usp=drive_link" },
+      { name: "Java Patterns", url: "https://drive.google.com/file/d/1lC6OUjE9b1zF9WJHyAY5WnwPMoq_wxFH/view?usp=drive_link" }
     ]
   },
   {
@@ -179,6 +180,7 @@ const notesData: NoteCategory[] = [
       { name: "Python Notes", url: "https://drive.google.com/file/d/1u4IDS_EzR-567GT9-GuF-4t1fgRpEAd8/view?usp=drive_link" },
       { name: "Python With Examples", url: "https://drive.google.com/file/d/1XacrH62iTOSbxLiYEo8DbmHGforoA2yo/view?usp=drive_link" },
       { name: "Python HandWritten Notes", url: "https://drive.google.com/file/d/1o3i1qusTa9NoyG4IkIksCrSruwnpNzsV/view?usp=drive_link" },
+      { name: "Python CheatSheet", url: "https://drive.google.com/file/d/1sYfGJyBI4Frc3V6teqPdbEKPd9MNpxzo/view?usp=drive_link" },
       { name: "Python 101 Programs", url: "https://drive.google.com/file/d/1f57IlKe4UYI3DAdRPRwm7RmQG1zL5cqz/view?usp=drive_link" }
     ]
   },
@@ -190,8 +192,10 @@ const notesData: NoteCategory[] = [
       { name: "React.js Notes", url: "https://drive.google.com/file/d/1gjS-xVjuRlla_NdEnK1JECyyOV1ePrjw/view?usp=drive_link" },
       { name: "BackEnd Interview QA", url: "https://drive.google.com/file/d/1lcQU_sWyND6iOjuIOkOw4KKZVctJeWOE/view?usp=drive_link" },
       { name: "React.js HandWritten Notes", url: "https://drive.google.com/file/d/1r4XyVLKXBiOTQ6mNByCnAS0qjTgIw-KQ/view?usp=drive_link" },
+      { name: "React.js", url: "https://drive.google.com/file/d/1jObBb64y8xOFK-XnuLgAbeGXqyVoOhlI/view?usp=drive_link" },
       { name: "BackEnd HandWritten Notes", url: "https://drive.google.com/file/d/10GVGKWUpAQeTLpJieeezXOaYDcGbjWgm/view?usp=drive_link" },
       { name: "MERN Stack HandWritten Notes", url: "https://drive.google.com/file/d/1Zsk_K2p13kmxPGUHd0c7fFOiLDD_Izik/view?usp=drive_link" },
+      { name: "Full Stack", url: "https://drive.google.com/file/d/1Xz5xD5bxKYWDTkHwhBe6nWgtHu6whYdB/view?usp=drive_link" },
       { name: "Java Full Stack Interview QA", url: "https://drive.google.com/file/d/1u3bgtoq_f6CICw-HMBgwOofP-eeFinH1/view?usp=drive_link" },
       { name: "Java with Spring and SpringBoot", url: "https://drive.google.com/file/d/14RePIxL-EMfDK3pcc9p70pgecQyyrINS/view?usp=drive_link" },
       { name: "Spring Boot Notes", url: "https://drive.google.com/file/d/1qtmV--WQYbo17hv9jGx86sajl56Hp4zQ/view?usp=drive_link" },
@@ -204,7 +208,8 @@ const notesData: NoteCategory[] = [
       { name: "SQL Notes", url: "https://drive.google.com/file/d/1GjV1OitZOwcNgMmFgtq13niBqrDU7lfc/view?usp=drive_link" },
       { name: "SQL HandWritten Notes", url: "https://drive.google.com/file/d/1F_DL9UF7HUzb-UHovstyBUDA4DUR398C/view?usp=drive_link" },
       { name: "SQL Interview Questions", url: "https://drive.google.com/file/d/1qRi6_35alnPBbE6rqWM9-kCzSvg1mXJZ/view?usp=drive_link" },
-      { name: "SQL CheatSheet 1 Page", url: "https://drive.google.com/file/d/1kjiXIRyAvL5VfHyleo0LuucZAQmRTpOl/view?usp=drive_link" }
+      { name: "SQL CheatSheet 1 Page", url: "https://drive.google.com/file/d/1kjiXIRyAvL5VfHyleo0LuucZAQmRTpOl/view?usp=drive_link" },
+      { name: "SQL LeetCode Problems", url: "https://drive.google.com/file/d/1Mz36KQJ7VY2iXTHDFz_px6u0YXKs28Y3/view?usp=drive_link" }
     ]
   },
   {
@@ -219,13 +224,18 @@ const notesData: NoteCategory[] = [
       { name: "Python Programs", url: "https://drive.google.com/file/d/1f9zlJGFGcLYDR0fYxv7yP_R-YFU5iPp2/view?usp=drive_link" },
       { name: "Python Technical QA", url: "https://drive.google.com/file/d/1YmLj-OLs8mGoVIHORjOZBpEBK0-ghyiZ/view?usp=drive_link" },
       { name: "Python Interview QA", url: "https://drive.google.com/file/d/1QG0swkOfE4xi4-9PdJR8h_3FKnDrTKZx/view?usp=drive_link" },
-      { name: "Python Codes Cheatsheet", url: "https://drive.google.com/file/d/13cLOpZws4BqY5xUriQRI41ZtkwKSIfdq/view?usp=drive_link" }
+      { name: "Python Codes Cheatsheet", url: "https://drive.google.com/file/d/13cLOpZws4BqY5xUriQRI41ZtkwKSIfdq/view?usp=drive_link" },
+      { name: "JavaScript Interview QA", url: "https://drive.google.com/file/d/1-ZipH_ciETi1qHxC_lwBUHFpxMFO3gX4/view?usp=drive_link" },
+      { name: "React.js Interview QA", url: "https://drive.google.com/file/d/1XbsC2xt1gkTw9e51GvYB-UirUdqe0PZO/view?usp=drive_link" },
+      { name: "Node.js Interview QA", url: "https://drive.google.com/file/d/1dlTupp3TtSjLM-jNrfk9fhzSycw9BYSx/view?usp=drive_link" }
     ]
   },
   {
     category: "DSA",
     notes: [
       { name: "DSA Notes", url: "https://drive.google.com/file/d/1vFJd4TF0fB30bsyj6VZ-za4JsfthKJvF/view?usp=drive_link" },
+      { name: "DSA Ultimate Notes", url: "https://drive.google.com/file/d/17NVZlgjqvoNFd4Jh8LEw4mmRTNVbghui/view?usp=drive_link" },
+      { name: "DSA Beginner to Advanced Notes", url: "https://drive.google.com/file/d/1bdh3Z0OEydNFEJj3x3fzNfldo_OGwfES/view?usp=drive_link" },
       { name: "LeetCode Problems with Solutions", url: "https://drive.google.com/file/d/13PJ-ueL-T8ct9HxnNZbqLD6rmYSvFCWO/view?usp=drive_link" },
       { name: "Strivers DSA Part-1", url: "https://drive.google.com/file/d/13l5Z1OfA71qyK0jE3rUHVflb2wSDSfdL/view?usp=drive_link" },
       { name: "Strivers DSA Part-2", url: "https://drive.google.com/file/d/1eocDDHSEG7ApyYnXQv0xnYdmxpfsXuks/view?usp=drive_link" },
